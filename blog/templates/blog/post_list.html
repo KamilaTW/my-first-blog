@@ -1,25 +1,15 @@
 <html>
-    <head>
+  <head>
         <title>Kamila's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1>Welcome!</h1>
-            <h2>This is Kamila's blog</h2>
-            <h3>description..</h3>
-            <em>text</em> emphasizes your text
-        </div>
+  </head>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
+  <body>
+    {% for post in posts %}
+    <div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaks }}</p>
+    </div>
+    {% endfor %}
+  </body>
 </html>
